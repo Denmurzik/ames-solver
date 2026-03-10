@@ -1,29 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Export tests button
-    const exportBtn = document.getElementById('export-tests-btn');
-    if (exportBtn) {
-        exportBtn.addEventListener('click', async () => {
-            try {
-                const resp = await fetch('/api/tests/export');
-                if (!resp.ok) {
-                    console.error('Export failed:', resp.status);
-                    return;
-                }
-                const blob = await resp.blob();
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'all_tests.zip';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                URL.revokeObjectURL(url);
-            } catch (err) {
-                console.error('Export error:', err);
-            }
-        });
-    }
+    // const exportBtn = document.getElementById('export-tests-btn');
+    // if (exportBtn) {
+    //     exportBtn.addEventListener('click', async () => {
+    //         try {
+    //             const resp = await fetch('/api/tests/export');
+    //             if (!resp.ok) {
+    //                 console.error('Export failed:', resp.status);
+    //                 return;
+    //             }
+    //             const blob = await resp.blob();
+    //             const url = URL.createObjectURL(blob);
+    //             const a = document.createElement('a');
+    //             a.href = url;
+    //             a.download = 'all_tests.zip';
+    //             document.body.appendChild(a);
+    //             a.click();
+    //             a.remove();
+    //             URL.revokeObjectURL(url);
+    //         } catch (err) {
+    //             console.error('Export error:', err);
+    //         }
+    //     });
+    // }
 
     // Zoom functionality
     let currentZoom = 1.0;
