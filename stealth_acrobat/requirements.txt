@@ -1,0 +1,6 @@
+Flask
+requests
+chromadb
+sentence-transformers
+torch
+numpy
